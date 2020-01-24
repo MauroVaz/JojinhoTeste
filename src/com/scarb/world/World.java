@@ -44,7 +44,9 @@ public class World {
 						tiles[xx + (yy*WIDTH)] = new FloorTile(xx * 16, yy * 16, Tile.TILE_FLOOR);
 					}else if(pixelAtual == 0xFFFF0C00){
 						//ENEMY
-						Game.entities.add(new Enemy(xx * 16, yy * 16,16,16,Entity.ENEMY));
+						Enemy en = new Enemy(xx * 16, yy * 16,16,16,Entity.ENEMY);
+						Game.entities.add(en);
+						Game.enemies.add(en);
 						tiles[xx + (yy*WIDTH)] = new FloorTile(xx * 16, yy * 16, Tile.TILE_FLOOR);
 					}else if(pixelAtual == 0xFFFF2873){
 						//LIFE
